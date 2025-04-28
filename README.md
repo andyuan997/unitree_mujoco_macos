@@ -54,6 +54,25 @@ cd unitree_mujoco
 pip install mujoco
 ```
 
+### Setup config.py
+Example (for my case):
+```
+ROBOT = "g1"
+ROBOT_SCENE = "../unitree_robots/" + ROBOT + "/scene_29dof.xml" # Robot scene
+DOMAIN_ID = 1 # Domain id
+INTERFACE = "lo0" # Interface
+
+USE_JOYSTICK = 0 # Simulate Unitree WirelessController using a gamepad
+JOYSTICK_TYPE = "xbox" # support "xbox" and "switch" gamepad layout
+JOYSTICK_DEVICE = 0 # Joystick number
+
+PRINT_SCENE_INFORMATION = True # Print link, joint and sensors information of robot
+ENABLE_ELASTIC_BAND = True # Virtual spring band, used for lifting h1
+
+SIMULATE_DT = 0.005  # Need to be larger than the runtime of viewer.sync()
+VIEWER_DT = 0.02  # 50 fps for viewer
+```
+
 ### Run Simulate
 ```bash
 cd ./simulate_python
